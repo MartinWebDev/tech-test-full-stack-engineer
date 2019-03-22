@@ -2,6 +2,7 @@ version: '3'
 
 services:
   ui:
+    container_name: UI
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
@@ -13,6 +14,7 @@ services:
     working_dir: /opt/ui
 
   server:
+    container_name: Server
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
@@ -26,6 +28,7 @@ services:
     working_dir: /opt/server
   
   database:
+    container_name: MySQL
     image: mysql:5.6
     environment:
       MYSQL_ROOT_PASSWORD: hipages

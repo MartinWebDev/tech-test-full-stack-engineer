@@ -11,6 +11,7 @@ I created a few basic endpoints for fetching jobs, and changing status:
 - **GET** */api/jobs/:id* - Get details of single job by ID
 - **POST** */api/jobs/:id/accept* - Set this job ID to be accepted
 - **POST** */api/jobs/:id/reject* - Set this job ID to be rejected
+
 The following were not really needed for this project, more for me to experiment with
 - **GET** */api/categories* - List all categories
 - **GET** */api/categories/:id* - Get details of category by ID

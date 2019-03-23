@@ -1,8 +1,7 @@
 import Types from "../Actions/_Types";
-// import { fetchJobsActionCreator } from "../Actions/JobsActions";
 
 export const fetchJobs = async () => {
-    let url = "https://s3-ap-southeast-2.amazonaws.com/hipgrp-assets/tech-test/jobs.json";
+    let url = "http://localhost:8080/api/jobs"; // GET URL FROM SETTINGS/ENV
 
     const response = await fetch(url, {
         headers: {
@@ -13,7 +12,7 @@ export const fetchJobs = async () => {
     const jobs = await response.json();
 
     if (!response.ok || !jobs) {
-        const error = new Error("Failed to fetch favourites");
+        const error = new Error("Failed to fetch jobs");
         error.status = response.status;
 
         throw error;
@@ -25,11 +24,8 @@ export const fetchJobs = async () => {
 export default store => next => action => {
     const ret = next(action);
 
+    // If wanting to do any actions in middleware, grab the action here
     switch (action.type) {
-        case Types.FETCH_JOBS_TYPE + 'eee': {
-            // store.dispatch(fetchJobsActionCreator(fetchJobs()));
-            break;
-        }
         default: {
             break;
         }

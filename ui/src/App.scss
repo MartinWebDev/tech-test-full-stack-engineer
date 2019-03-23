@@ -1,0 +1,10 @@
+// Define no styles here, just imports. All styles are in a css folder
+@import "./Scss/00_Variables.scss";
+@import "./Scss/01_FontImports.scss";
+@import "./Scss/02_PageLayout.scss";
+@import "./Scss/03_Globals.scss";
+@import "./Scss/04_Components.scss";
+
+// Bring in global animations
+@import "./Scss/Animations/HeightEnter.scss";
+@import "./Scss/Animations/FadeIn.scss";

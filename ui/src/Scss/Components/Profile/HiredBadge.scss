@@ -1,0 +1,19 @@
+@import "../../Mixins/FontMixins.scss";
+
+.has-badge {
+    position: relative;
+    
+    .hired-badge {
+        position: absolute;
+        bottom: 5px;
+        left: 18px; // Definitely not the right way to do this, but didn't want to spend too long on pixel perfect styling just for a dev test.
+        background-color: #FF7B11;
+        border-radius: 10px;
+
+        &-inner {
+            @include generate-font(70%, #fff, 600);
+            text-transform: uppercase;
+            margin: 2px 6px;
+        }
+    }
+}

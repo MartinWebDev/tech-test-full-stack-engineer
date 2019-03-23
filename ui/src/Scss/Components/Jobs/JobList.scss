@@ -1,0 +1,100 @@
+@import "../../Mixins/FontMixins.scss";
+
+#jobs-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #job-status-toggle {
+        margin-top: 16px;
+        flex: 1;
+        width: 85%;
+        max-width: 600px;
+        display: flex;
+        border-bottom: none;
+
+        @import "./JobStatusToggle.scss";
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .jobs-page-list-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            margin: 12px;
+            text-align: center;
+
+            &-inner {
+                padding: 12px;
+                
+                // Apply to all sections below
+                > div {
+                    margin: 8px 0;
+                }
+            }
+
+            &-header {
+                position: relative;
+
+                &-contextmenu {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    
+                    img {
+                        padding: 2px 0;
+                    }
+                }
+
+                &-title {
+                    @include generate-font(140%, #444, 800);
+                }
+                
+                &-date {
+                    @include generate-font(90%, #999, 600);
+                }
+            }
+
+            &-status {
+                @include generate-font(90%, #6dcac5, 600);
+            }
+
+            &-hired {
+                &-status {
+                    @include generate-font(90%, #888, 400);
+                }
+
+                &-people {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    
+                    &-profile {
+                        padding: 8px;
+
+                        img {
+                            height: 60px;
+                            width: 60px;
+                        }
+                    }
+                }
+            }
+            
+            &-links {
+                > a {
+                    @include generate-font(110%, #ff825b, 600);
+                    text-decoration: none;
+
+                    &:hover {
+                        color: darken(#ff825b, 10%);
+                    }
+                }
+            }
+        }
+    }
+}

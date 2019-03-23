@@ -1,0 +1,9 @@
+@import "./00_Variables.scss";
+
+.page-section {
+    background-color: $elementBackgroundColor;
+
+    &.border {
+        border: 1px solid #ddd;
+    }
+}

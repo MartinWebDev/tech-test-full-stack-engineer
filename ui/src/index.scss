@@ -2,10 +2,12 @@
 
 /* $primary: #ff7b11; (hipages orange) */
 
+// Use index as a reset
 body {
     color: #303034;
     margin: 0;
     padding: 0;
+    border: 0;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

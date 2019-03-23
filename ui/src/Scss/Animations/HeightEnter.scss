@@ -1,0 +1,25 @@
+.slide-down {
+    overflow: hidden;
+
+    &-enter {
+        opacity: 0.01;
+        transform: scaleY(0);
+        
+        &-active {
+            opacity: 1;
+            transform: scaleY(1);
+            transition: all 300ms ease-out;
+        }
+    }
+    
+    &-exit {
+        opacity: 1;
+        transform: scaleY(1);
+        
+        &-active {
+            opacity: 0.01;
+            transform: scaleY(0);
+            transition: all 300ms ease-out;
+        }
+    }
+}

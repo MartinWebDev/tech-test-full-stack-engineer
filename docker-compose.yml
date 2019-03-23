@@ -2,7 +2,6 @@ version: '3'
 
 services:
   ui:
-    container_name: UI
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
@@ -14,10 +13,13 @@ services:
     working_dir: /opt/ui
 
   server:
-    container_name: Server
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
+      DB_SERVER: localhost:3306
+      DB_USERNAME: root
+      DB_PASSWORD: hipages
+      DB_DATABASE: hipages
     image: node:10.15-alpine
     links:
       - database:database
@@ -28,7 +30,6 @@ services:
     working_dir: /opt/server
   
   database:
-    container_name: MySQL
     image: mysql:5.6
     environment:
       MYSQL_ROOT_PASSWORD: hipages

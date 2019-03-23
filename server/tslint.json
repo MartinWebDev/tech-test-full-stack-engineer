@@ -6,6 +6,11 @@
     "member-ordering": [
       false
     ],
-    "quotemark": false
+    "quotemark": false,
+    "trailing-comma": false,
+    "curly": false,
+    "space-before-function-paren": false,
+    "no-empty": false,
+    "one-line": false
   }
 }

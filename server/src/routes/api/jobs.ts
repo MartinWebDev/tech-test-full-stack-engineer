@@ -11,7 +11,7 @@ const includeJobsRoutes = (api) => {
         const db = new MySQLAsync(connection);
 
         try {
-            const results = await db.queryAsync("SELECT * FROM jobs WHERE status NOT IN ('closed', 'rejected')");
+            const results = await db.queryAsync("SELECT * FROM jobs WHERE status NOT IN ('closed', 'declined')");
             res.json({ jobs: results });
         }
         catch (ex) {
@@ -54,12 +54,12 @@ const includeJobsRoutes = (api) => {
         }
     });
 
-    api.post("/jobs/:id/reject", async (req, res, next) => {
+    api.post("/jobs/:id/decline", async (req, res, next) => {
         const connection = getConnection();
         const db = new MySQLAsync(connection);
 
         try {
-            const results: any = await db.queryAsync(`UPDATE jobs SET status = 'rejected' WHERE id = ${req.params.id}`);
+            const results: any = await db.queryAsync(`UPDATE jobs SET status = 'declined' WHERE id = ${req.params.id}`);
 
             if (results.affectedRows === 0) {
                 throw new Error("ID was not found in database!");

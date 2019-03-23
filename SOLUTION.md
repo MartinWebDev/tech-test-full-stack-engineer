@@ -11,10 +11,10 @@ As such, the server is missing many things such as prepared statements, scriptin
 I did however at a minimum create my own basic async wrapper for the mysql package since it's clearly outdated. I prefer the modern async/await pattern, especially coming from a C# background, and anything that reduces nasty horrible dirty ugly callbacks is my friend :)
 
 I created a few basic endpoints for fetching jobs, and changing status:
-- **GET** */api/jobs* - List all jobs that do not have the status of "closed" or "rejected"
+- **GET** */api/jobs* - List all jobs that do not have the status of "closed" or "declined"
 - **GET** */api/jobs/:id* - Get details of single job by ID
 - **POST** */api/jobs/:id/accept* - Set this job ID to be accepted
-- **POST** */api/jobs/:id/reject* - Set this job ID to be rejected
+- **POST** */api/jobs/:id/decline* - Set this job ID to be declined
 
 The following were not really needed for this project, more for me to experiment with:
 - **GET** */api/categories* - List all categories

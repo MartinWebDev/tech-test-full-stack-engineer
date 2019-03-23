@@ -3,10 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animated": "^0.2.2",
+    "connected-react-router": "^6.3.2",
+    "immutability-helper": "^3.0.0",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.2"
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.2",
+    "react-transition-group": "^2.7.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.0"
   },
   "scripts": {
     "start": "npm rebuild node-sass && react-scripts start",

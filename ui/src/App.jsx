@@ -1,6 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import { push } from "connected-react-router";
 
-const App = ({ children }) => {
+const App = ({ children, push }) => {
+    // Force user to jobs page for the sake of this task
+    push("/jobs");
+
     return (
         <React.Fragment>
             <div id="page-wrapper">
@@ -12,4 +17,8 @@ const App = ({ children }) => {
     );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+    push: (path) => dispatch(push(path))
+});
+
+export default connect(null, mapDispatchToProps)(App);

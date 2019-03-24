@@ -6,17 +6,17 @@ const JobListStatusFilter = ({ onToggle, currentStatus }) => {
     return (
         <div id="job-status-toggle" className="page-section border">
             <div
-                className={`job-status-toggle-option ${currentStatus === JOB_STATUS.IN_PROGRESS ? "active" : ""}`}
-                onClick={() => onToggle(JOB_STATUS.IN_PROGRESS)}
+                className={`job-status-toggle-option ${currentStatus === JOB_STATUS.NEW ? "active" : ""}`}
+                onClick={() => onToggle(JOB_STATUS.NEW)}
             >
-                Open Jobs
+                Invited
             </div>
 
             <div
-                className={`job-status-toggle-option ${currentStatus === JOB_STATUS.CLOSED ? "active" : ""}`}
-                onClick={() => onToggle(JOB_STATUS.CLOSED)}
+                className={`job-status-toggle-option ${currentStatus === JOB_STATUS.ACCEPTED ? "active" : ""}`}
+                onClick={() => onToggle(JOB_STATUS.ACCEPTED)}
             >
-                Closed Jobs
+                Accepted
             </div>
         </div>
     );

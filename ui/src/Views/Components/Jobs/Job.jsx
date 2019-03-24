@@ -1,6 +1,5 @@
 // Packages
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import moment from "moment";
 
@@ -8,46 +7,33 @@ import moment from "moment";
 import { getJobDetails } from "../../../Selectors/JobSelectors";
 
 // Components
+import IconTextPair from "../../../Partials/IconTextPair";
 import ProfileThumb from "../Profiles/ProfileThumb";
+import Button from "../../../Partials/Button";
+import Price from "../../../Partials/Price";
 
 const Job = ({ job, dateFormat }) => {
-    const hiredCount = job.connectedBusinesses && job.connectedBusinesses.filter((business) => business.isHired).length;
-
     return (
         <div className="jobs-page-list-item">
             <div className="jobs-page-list-item-inner page-section border">
                 <div className="jobs-page-list-item-header">
-                    <div className="jobs-page-list-item-header-contextmenu">
-                        <img src="/imgs/icons/icons8-menu-vertical-24.png" alt="" />
-                    </div>
-
-                    <div className="jobs-page-list-item-header-title">{job.category}</div>
-                    <div className="jobs-page-list-item-header-date">Posted: {moment(job.postedDate, "YYYY-MM-DD").format(dateFormat)}</div>
+                    <ProfileThumb />
+                    <div className="jobs-page-list-item-header-title">{job.contact_name}</div>
+                    <div className="jobs-page-list-item-header-date">Posted: {moment(job.created_date).format(dateFormat)}</div>
                 </div>
 
-                <div className="jobs-page-list-item-status">{job.status}</div>
-
-                <div className="jobs-page-list-item-hired">
-                    <div className="jobs-page-list-item-hired-status">
-                        {
-                            hiredCount > 0 ?
-                                `You have hired ${hiredCount} business${hiredCount > 1 ? 'es' : ''}` :
-                                `Conncting you with businesses`
-                        }
-                    </div>
-
-                    <div className="jobs-page-list-item-hired-people">
-                        {
-                            job.connectedBusinesses &&
-                            job.connectedBusinesses.map((business) =>
-                                <ProfileThumb key={business.businessId} profile={business} />
-                            )
-                        }
-                    </div>
+                <div className="jobs-page-list-item-info">
+                    <IconTextPair icon={`/img/icons8-place-marker-50.png`} text={`${job.suburb_name} ${job.postcode}`} />
+                    <IconTextPair icon={`/img/job-category/${job.icon_filename}`} text={job.category_name} />
+                    <IconTextPair text={`Job ID: ${job.id}`} />
                 </div>
+
+                <div className="jobs-page-list-item-description">{job.description}</div>
 
                 <div className="jobs-page-list-item-links">
-                    <Link to={`/jobs/${job.jobId}`}>View Details</Link>
+                    <Button onClick={console.log} primary>Accept</Button>
+                    <Button onClick={console.log}>Decline</Button>
+                    <Price amount={job.price} rate={1} symbol="$" /> Lead Invitation
                 </div>
             </div>
         </div>

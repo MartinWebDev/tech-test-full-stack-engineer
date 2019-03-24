@@ -11,7 +11,7 @@ import Job from "./Job";
 import JobListStatusFilter from "./JobListStatusFilter";
 
 const JobList = (props) => {
-    const [filterStatus, setFilterStatus] = useState(JOB_STATUS.IN_PROGRESS);
+    const [filterStatus, setFilterStatus] = useState(JOB_STATUS.NEW);
 
     // TODO: Definitely a better way to call this in functional component w/hooks, but it's ok for now.
     useEffect(() => {
@@ -31,8 +31,8 @@ const JobList = (props) => {
                     props.jobs.filter((job) =>
                         job.status.toUpperCase() === filterStatus
                     ).map((job) =>
-                        <CSSTransition key={job.jobId} classNames="fade-in-TODO-FIX" timeout={0}>
-                            <Job id={job.jobId} key={job.jobId} />
+                        <CSSTransition key={job.id} classNames="fade-in-TODO-FIX" timeout={0}>
+                            <Job id={job.id} key={job.id} />
                         </CSSTransition>
                     )
                 }

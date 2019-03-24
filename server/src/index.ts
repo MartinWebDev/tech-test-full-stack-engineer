@@ -1,9 +1,6 @@
 // Libraries
 import * as express from "express";
-// import * as mysql from "mysql";
-
-// Imports
-import MySQLAsync from "./MySQLAsync";
+import * as cors from "cors";
 
 // Routes
 import { api } from "./routes";
@@ -11,6 +8,9 @@ import { api } from "./routes";
 // Server init
 const server = express();
 const port = 8080;
+
+// Server setup
+server.use(cors());
 
 // Server route setup
 server.use('/api', api);

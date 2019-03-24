@@ -1,0 +1,42 @@
+@import "../../00_Variables.scss";
+@import "../../Mixins/FontMixins.scss";
+
+$accentAmount: 50%;
+$borderAccentAmount: 10%;
+$hoverAccentAmount: 8%;
+$fontSize: 85%;
+$fontWeight: 700;
+
+.hp-button {
+    // Reset
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+
+    // Style
+    padding: 10px 24px;
+    margin-right: 8px;
+    @include generate-font($fontSize, darken($pageBackgroundColor, $accentAmount), $fontWeight);
+
+    background-color: $pageBackgroundColor;
+    border-bottom: 3px solid darken($pageBackgroundColor, $borderAccentAmount);
+    border-radius: 3px;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: darken($pageBackgroundColor, $hoverAccentAmount);
+        border-bottom: 3px solid darken($pageBackgroundColor, $borderAccentAmount + $hoverAccentAmount);
+    }
+
+    &.primary {
+        background-color: $primary;
+        @include generate-font($fontSize, lighten($primary, $accentAmount), $fontWeight);
+        border-bottom: 3px solid darken($primary, $borderAccentAmount);
+
+        &:hover {
+            background-color: darken($primary, $hoverAccentAmount);
+            border-bottom: 3px solid darken($primary, $borderAccentAmount + $hoverAccentAmount);
+        }
+    }
+}

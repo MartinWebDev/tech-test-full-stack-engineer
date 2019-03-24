@@ -24,31 +24,30 @@
 
         .jobs-page-list-item {
             flex: 1;
-            min-width: 300px;
-            max-width: 400px;
+            min-width: 400px;
+            max-width: 800px;
             margin: 12px;
-            text-align: center;
 
             &-inner {
-                padding: 12px;
-                
+                // height: 100%; // Makes the buttons looks crappy, but the grid look good. Better design decisions need to be made here.
+
                 // Apply to all sections below
                 > div {
-                    margin: 8px 0;
+                    padding: 12px;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #ececec;
+                    }
                 }
             }
 
             &-header {
-                position: relative;
-
-                &-contextmenu {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    
-                    img {
-                        padding: 2px 0;
-                    }
+                &-picture {
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    background-size: cover;
+                    background-position: center center;
                 }
 
                 &-title {
@@ -62,27 +61,6 @@
 
             &-status {
                 @include generate-font(90%, #6dcac5, 600);
-            }
-
-            &-hired {
-                &-status {
-                    @include generate-font(90%, #888, 400);
-                }
-
-                &-people {
-                    display: flex;
-                    justify-content: space-around;
-                    flex-wrap: wrap;
-                    
-                    &-profile {
-                        padding: 8px;
-
-                        img {
-                            height: 60px;
-                            width: 60px;
-                        }
-                    }
-                }
             }
             
             &-links {

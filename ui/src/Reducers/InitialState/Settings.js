@@ -1,5 +1,5 @@
 export default {
     site: {
-        dateFormat: ""
+        dateDisplayFormat: ""
     }
 };

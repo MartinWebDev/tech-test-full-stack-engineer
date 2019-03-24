@@ -1,7 +1,7 @@
-import Types from "../Actions/_Types";
+// import Types from "../Actions/_Types";
 
 export const fetchJobs = async () => {
-    let url = "http://localhost:8080/api/jobs"; // GET URL FROM SETTINGS/ENV
+    let url = "http://localhost:8080/api/jobs"; // TODO IN REAL APP - GET URL FROM SETTINGS/ENV
 
     const response = await fetch(url, {
         headers: {

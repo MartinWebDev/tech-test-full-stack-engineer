@@ -1,50 +1,14 @@
+@import "./00_Variables.scss";
 @import "./Mixins/FontMixins.scss";
 
 body {
-    @include generate-font(1em, #222, 400);
+    @include generate-font(1em, $defaultFontColor, 400);
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #303034;
     min-width: 340px;
+    background-color: $pageBackgroundColor;
 
     #page {
         &-wrapper {
-            background-color: #eee;
-        }
-
-        &-header {
-            display: block;
-            padding: 8px;
-            box-shadow: 0px 0px 2px 2px #ccc;
-            border-top: 6px solid #fe7b11;
-            display: flex;
-            justify-content: space-between;
-
-            &-logo {
-                > img {
-                    margin-bottom: 4px;
-                    display: block;
-                }
-
-                > span {
-                    @include generate-font(80%, #888, 800);
-                    display: block;
-                }
-            }
-
-            &-menu {
-                width: 36px;
-                height: 36px;
-                margin: auto 8px;
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                > img {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
         }
 
         &-body {

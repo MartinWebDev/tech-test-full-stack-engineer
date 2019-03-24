@@ -9,8 +9,6 @@ import { getJobDetails } from "../../../Selectors/JobSelectors";
 
 // Components
 import ProfileThumb from "../Profiles/ProfileThumb";
-import ContextMenuContainer from "../../../Partials/ContextMenu/ContextMenuContainer";
-import ContextMenuItem from "../../../Partials/ContextMenu/ContextMenuItem";
 
 const Job = ({ job, dateFormat }) => {
     const hiredCount = job.connectedBusinesses && job.connectedBusinesses.filter((business) => business.isHired).length;
@@ -19,10 +17,6 @@ const Job = ({ job, dateFormat }) => {
         <div className="jobs-page-list-item">
             <div className="jobs-page-list-item-inner page-section border">
                 <div className="jobs-page-list-item-header">
-                    <ContextMenuContainer>
-                        <ContextMenuItem text="Some text" onClick={console.log} />
-                    </ContextMenuContainer>
-
                     <div className="jobs-page-list-item-header-contextmenu">
                         <img src="/imgs/icons/icons8-menu-vertical-24.png" alt="" />
                     </div>

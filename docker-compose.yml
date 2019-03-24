@@ -16,7 +16,8 @@ services:
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
-      DB_SERVER: localhost:3306
+      DB_SERVER: database
+      DB_PORT: 3306
       DB_USERNAME: root
       DB_PASSWORD: hipages
       DB_DATABASE: hipages

@@ -18,7 +18,7 @@ import JobsMiddleware from "./Middlewares/JobsMiddleware";
 import AppRouter from "./AppRouter";
 
 // Initial actions
-import { init } from "./Actions/SettingsActions";
+import { init, goToJobsPage } from "./Actions/SettingsActions";
 
 // Style imports
 import "./index.scss";
@@ -38,5 +38,7 @@ let middlewares = [
 
 const store = storeCreator({}, history, middlewares);
 store.dispatch(init());
+
+store.dispatch(goToJobsPage());
 
 ReactDOM.render(<AppRouter store={store} history={history} />, document.getElementById("page"));

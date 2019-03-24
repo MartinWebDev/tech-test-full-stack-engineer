@@ -11,7 +11,17 @@ const includeJobsRoutes = (api) => {
         const db = new MySQLAsync(connection);
 
         try {
-            const results = await db.queryAsync("SELECT * FROM jobs WHERE status NOT IN ('closed', 'declined')");
+            // const results = await db.queryAsync("SELECT * FROM jobs WHERE status NOT IN ('closed', 'declined')");
+            const results = await db.queryAsync(
+                `SELECT J.id, J.status, J.contact_name, J.price, J.description, J.created_at,
+                    C.id AS category_id, C.name AS category_name, C.icon_filename,
+                    S.id AS suburb_id, S.name AS suburb_name, S.postcode
+                FROM jobs J
+                INNER JOIN categories C ON C.id = J.category_id
+                INNER JOIN suburbs S ON S.id = J.suburb_id
+                WHERE status NOT IN ('closed', 'declined')`
+            );
+
             res.json({ jobs: results });
         }
         catch (ex) {
@@ -25,7 +35,17 @@ const includeJobsRoutes = (api) => {
         const db = new MySQLAsync(connection);
 
         try {
-            const results = await db.queryAsync(`SELECT * FROM jobs WHERE id = ${req.params.id}`);
+            // const results = await db.queryAsync(`SELECT * FROM jobs WHERE id = ${req.params.id}`);
+            const results = await db.queryAsync(
+                `SELECT J.id, J.status, J.contact_name, J.price, J.description, J.created_at,
+                    C.id AS category_id, C.name AS category_name, C.icon_filename,
+                    S.id AS suburb_id, S.name AS suburb_name, S.postcode
+                FROM jobs J
+                INNER JOIN categories C ON C.id = J.category_id
+                INNER JOIN suburbs S ON S.id = J.suburb_id
+                WHERE id = ${req.params.id}`
+            );
+
             res.json({ job: results[0] });
         }
         catch (ex) {

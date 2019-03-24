@@ -10,11 +10,9 @@ import "./App.scss";
 
 import App from "./App";
 
-import Home from "./Views/Home";
-import Contact from "./Views/About";
-// const Home = React.lazy(() => import("./Views/Home"));
+const Home = () => (<p>Home Page</p>);
 const Jobs = React.lazy(() => import("./Views/Jobs"));
-// const Contact = React.lazy(() => import("./Views/Contact"));
+const Contact = () => (<p>Contact Page</p>);
 
 // Lazy load for router
 function ReactRouterLazyWrapper(Element) {

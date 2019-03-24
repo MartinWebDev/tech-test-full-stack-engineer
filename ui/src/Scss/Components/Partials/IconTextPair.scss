@@ -1,0 +1,13 @@
+$iconDimensions: 16px;
+
+.icon-text-pair {
+    margin-right: 18px;
+    line-height: $iconDimensions;
+    
+    > img {
+        margin-right: 6px;
+        vertical-align: middle;
+        width: $iconDimensions;
+        height: $iconDimensions;
+    }
+}

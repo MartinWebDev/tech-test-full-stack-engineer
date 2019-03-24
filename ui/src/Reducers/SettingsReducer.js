@@ -8,7 +8,7 @@ const SettingsReducer = (state = InitialState, action) => {
             return {
                 site: {
                     // Planning ahead by putting date format in the reducers so we can make i18n easier
-                    dateDisplayFormat: "MMMM DD @ HH:mm"
+                    dateDisplayFormat: "MMMM DD @ h:mm a"
                 }
             };
         default:

@@ -1,12 +1,6 @@
 @import "../../00_Variables.scss";
 @import "../../Mixins/FontMixins.scss";
 
-$accentAmount: 50%;
-$borderAccentAmount: 10%;
-$hoverAccentAmount: 8%;
-$fontSize: 85%;
-$fontWeight: 700;
-
 .hp-button {
     // Reset
     border: 0;
@@ -15,6 +9,7 @@ $fontWeight: 700;
     background: none;
 
     // Style
+    font-family: 'Raleway'; // I like to include a little accent font, although Raleway might be too subtle, this would be something I'd discuss with a design team :)
     padding: 10px 24px;
     margin-right: 8px;
     @include generate-font($fontSize, darken($pageBackgroundColor, $accentAmount), $fontWeight);

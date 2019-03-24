@@ -1,0 +1,13 @@
+@import "../../00_Variables.scss";
+@import "../../Mixins/FontMixins.scss";
+
+.clickable {
+    > a {
+        @include generate-font(90%, $primary, 700);
+        text-decoration: none;
+
+        &:hover {
+            @include generate-font(90%, darken($primary, $hoverAccentAmount), 700);
+        }
+    }
+}

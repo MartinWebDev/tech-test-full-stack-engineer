@@ -42,6 +42,9 @@
             }
 
             &-header {
+                display: flex; 
+                flex-direction: row;
+
                 &-picture {
                     border-radius: 50%;
                     width: 50px;
@@ -50,8 +53,15 @@
                     background-position: center center;
                 }
 
+                &-details {
+                    margin-left: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+
                 &-title {
-                    @include generate-font(140%, #444, 800);
+                    @include generate-font(120%, #444, 700);
                 }
                 
                 &-date {
@@ -59,8 +69,8 @@
                 }
             }
 
-            &-status {
-                @include generate-font(90%, #6dcac5, 600);
+            &-description {
+                @include generate-font(90%, #666, 400);
             }
             
             &-links {

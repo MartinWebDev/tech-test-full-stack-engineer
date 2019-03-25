@@ -44,5 +44,7 @@ Refacotring, I tried to keep it as SOLID and DRY as possible, but I still ended 
 Tests. Given that I was informed this was to be a few hours long coding challenge, I decided to forego testing for now as that alone would take at least the suitable time limit, if not more, and then no app would have build to go with it. Given more time, or a real life application, then I would have gone for a test first approach. Writing tests to cover all my API end points, all my action creators, all my UI logic, and all my reducers. Then, and only then, actually writing the real app. 
 Unfotunately due to the scope and timeframe of this test app there simply wasn't time for that :(
 
+Branches. I would have liked the chance to demonstrate my knowledge of git better, specifically around managing multiple branches, merges, partial merges, and general branch management, but realistically the task would need to be more granular, IE: Task 1, Task 2, Task 3, rather than a "Build X" task, but we can talk about git management later if required :)
+
 ## Why I did certain things
 I don't want to go into too much detail here, but basically I tried to include a random sample of a few various techniques I have picked up over time as well as a general demonstration of react and redux. If you have any questions about justifying what I did, I'd be happy to answer if required :)

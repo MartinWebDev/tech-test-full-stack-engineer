@@ -32,12 +32,15 @@ After some headache with Docker (needing to upgrade to Windows 10 Pro since it c
 
 The React App can be a little slow to start, this is because I had to include a command to rebuild the node-sass binding binaries. This seems a limitation of Docker as when I perform an install it obviously builds the binaries for my local machine, then when running in Docker it expects specific linux bindings, but of course cannot find them. 
 This would be the same issue for you if you are running anything exept the exact same version of linux as the docker container. To quickly solve this, I just get the app to rebuild node-sass during the container start process. This means the required linux binding will be build, but it does slow the build down. 
+
 I am sure there are plenty of other solutions available. Perhaps only running the rebuild if bindings are not found, or maybe some other docker specific solution, but in the interest of saving time I just took this quick solution. 
 
 ## What I would have done differently
 For starters, I would love React's scheduler package to be released as it would add some great performance tweeks to this app, but for now I have just prepared the app as much as possible to use that later. I didn't want to use it yet as it is still classed as unsafe (since I last checked). 
 I would have loved to have more time on it so I could enhance the server side, however given the scope and timescale of this challenge I would rather not spend too many evenings on something that is lower priority to demonstrate. 
+
 Refacotring, I tried to keep it as SOLID and DRY as possible, but I still ended up with repeated code blocks, especially in the scss. Given a real application I would put more planning and focus into making sure there is as little (preferably none) repeated code anywhere in the app. 
+
 Tests. Given that I was informed this was to be a few hours long coding challenge, I decided to forego testing for now as that alone would take at least the suitable time limit, if not more, and then no app would have build to go with it. Given more time, or a real life application, then I would have gone for a test first approach. Writing tests to cover all my API end points, all my action creators, all my UI logic, and all my reducers. Then, and only then, actually writing the real app. 
 Unfotunately due to the scope and timeframe of this test app there simply wasn't time for that :(
 
